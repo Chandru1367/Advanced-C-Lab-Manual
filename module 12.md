@@ -15,24 +15,42 @@ Algorithm:
  
 Program:
 
-//type your code here
+```C
+struct Node   
+{  
+float data;  
+struct Node *next;  
+}*head;  
+void display()  
+{  
+    struct Node *ptr;
+    ptr = head;
+    while(ptr != NULL){
+        printf("%.2f\n",ptr->data);
+        ptr = ptr->next;
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="659" height="430" alt="image" src="https://github.com/user-attachments/assets/ae3cb37d-9053-4d14-8f8f-73a25cebf1c4" />
 
 
 Result:
+
 Thus, the program to display stack elements using linked list is verified successfully. 
 
 
 
-EXP.NO 27: C PROGRAM TO POP AN ELEMENT FROM THE GIVEN STACK USING 
-LINKED LIST.
+EXP.NO 27: C PROGRAM TO POP AN ELEMENT FROM THE GIVEN STACK USING LINKED LIST.
+
 Aim:
+
 To write a C program to pop an element from the given stack using liked list.
 
 Algorithm:
+
 1.	Check for Empty Stack
 2.	If head is equal to NULL, Print "Stack is empty."
 3.	Else Proceed to the next step.
@@ -40,22 +58,46 @@ Algorithm:
  
 Program:
 
-//type your code here
+```C
+struct Node   
+{  
+float data;  
+struct Node *next;  
+}*head;  
+
+void pop()  
+{
+    struct Node *ptr;
+    if (head == NULL){
+        printf("stack is empty\n");
+    }
+    else{
+        ptr=head;
+        head = head->next;
+        free(ptr);
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="1105" height="527" alt="image" src="https://github.com/user-attachments/assets/4443790a-a064-48ae-84ce-fc1abf20fa65" />
 
 
 
 Result:
+
 Thus, the program to pop an element from the given stack using liked list is verified successfully.
 
  
 EXP NO:28 C PROGRAM TO DISPLAY QUEUE ELEMENTS USING LINKED LIST.
+
 Aim:
+
 To write a C program to display queue elements using linked list.
+
 Algorithm:
+
 1.	Check if Queue is Empty
 2.	Display Queue Elements
 3.	Print the data of the current node pointed to by front
@@ -64,13 +106,35 @@ Algorithm:
  
 Program:
 
-//type your code here
-
+```C
+struct Node
+{
+   float data;
+   struct Node *next;
+}*front=NULL,*rear=NULL;
+void display()
+{
+    struct Node *ptr;
+    if (front == NULL){
+        printf("queue is empty\n");
+    }
+    else{
+        printf("Queue elements:\n");
+    }
+    ptr = front;
+    while(ptr!=NULL){
+        printf("%.3f\n",ptr->data);
+        ptr = ptr->next;
+    }
+}
+```
 Output:
 
-//paste your output here
+<img width="695" height="470" alt="image" src="https://github.com/user-attachments/assets/0dd29aea-44ab-4a69-8657-bcca24253742" />
+
 
 Result:
+
 Thus, the program to display queue elements using linked list is verified successfully.
 
 
@@ -78,9 +142,11 @@ Thus, the program to display queue elements using linked list is verified succes
 EXP NO:29 C PROGRAM TO INSERT ELEMENTS IN QUEUE USING LINKED LIST
 
 Aim:
+
 To write a C program to insert elements in queue using linked list
 
 Algorithm:
+
 1.	Allocate Memory for New Node
 2.	Set Data and Next Pointer
 3.	Check if Queue is Empty
@@ -90,13 +156,36 @@ Algorithm:
  
 Program:
 
-//type your code here
+```C
+struct Node
+{
+   int data;
+   struct Node *next;
+}*front=NULL,*rear=NULL;
+void enqueue(int data)
+{
+    struct Node *n;
+    n = (struct Node *)malloc(sizeof(struct Node));
+    n->data = data;
+    n->next = NULL;
+    if (front == NULL){
+        front = rear = n;
+    }
+    else{
+        rear->next = n;
+        rear = n;
+    }
+}
+```
 
 Output:
 
-//paste your output here
+
+<img width="736" height="478" alt="image" src="https://github.com/user-attachments/assets/01092755-9c0e-4476-b448-8cd76d3f7a85" />
+
 
 Result:
+
 Thus, the program to insert elements in queue using linked list is verified successfully.
 
 
@@ -117,12 +206,22 @@ o	If the queue is not empty, return the data stored in the front node of the lin
 
 Program:
 
-//type your code here
+```C
+struct Node
+{
+   float data;
+   struct Node *next;
+}*front=NULL,*rear=NULL;
+void peek()
+{
+    printf("%.2f",front->data);
+}
+```
 
 Output:
 
-//paste your output here
 
+<img width="677" height="502" alt="image" src="https://github.com/user-attachments/assets/49479c89-10d0-47da-a623-95e7f6645e26" />
 
 
 Result:
